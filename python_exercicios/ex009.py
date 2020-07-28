@@ -1,0 +1,7 @@
+n=int(input('\033[30;4mDigite um valor:\033[m '))
+print('\033[31m0x{}={}   1x{}={}'.format(n,0,n,n*1))
+print('\033[32m2x{}={}   3x{}={}'.format(n,n*2,n,n*3))
+print('\033[33m4x{}={}   5x{}={}'.format(n,n*4,n,n*5))
+print('\033[34m6x{}={}   7x{}={}'.format(n,n*6,n,n*7))
+print('\033[35m8x{}={}   9x{}={}'.format(n,n*8,n,n*9))
+print('\033[36m10x{}={}'.format(n,n*10))

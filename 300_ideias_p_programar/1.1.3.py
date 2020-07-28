@@ -1,0 +1,8 @@
+print('Não vai dar certo')
+print('Você nunca vai conseguir')
+print('Você vai se estrepar')
+print('Vai dar tudo errado')
+print('Está tudo errado')
+print('Você não é capaz')
+print('Você não nasceu pra isso')
+print('Desista')

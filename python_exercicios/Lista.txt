@@ -1,0 +1,5 @@
+nome:       idade: 0 anos
+nome: arani      idade: 55 anos
+nome: eu                                  idade:                              0 anos
+nome: tu                                  idade: 1 anos
+nome: nos             idade: 2 anos

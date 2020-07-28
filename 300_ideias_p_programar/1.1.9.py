@@ -1,0 +1,5 @@
+print('x   x')
+print(' x x')
+print('  x')
+print(' x x')
+print('x   x ')

@@ -1,0 +1,10 @@
+n=input('   \033[;30mDigite algo: ')
+print('seu tipo primitivo é:',type(n))
+print('É mnumerico?',n.isnumeric())
+print('É alfabetico?',n.isalpha())
+print('É alfanumerico?',n.isalnum())
+print('So tem espaços?',n.isspace())
+print('Está em maiusculas?',n.isupper())
+print('Está em minusculas?',n.islower())
+print('Captalizada:',n.capitalize())
+
