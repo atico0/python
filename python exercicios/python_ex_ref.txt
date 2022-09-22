@@ -1,0 +1,22 @@
+python:
+https://www.w3resource.com/python-exercises/ (exercicios)
+https://pynative.com/python-exercises-with-solutions/ (exercicios)
+https://www.practicepython.org/ (exercicios)
+https://www.machinelearningplus.com/python/101-pandas-exercises-python/ (exercicios)
+https://www.w3resource.com/python-exercises/pandas/index.php (exercicios)
+https://data-flair.training/blogs/data-science-project-ideas/ (projetos)
+https://www.interviewbit.com/blog/data-science-projects/ (projetos)
+https://towardsdatascience.com/12-cool-data-science-projects-ideas-for-beginners-and-experts-fc75b5498e03 
+https://www.projectpro.io/article/artificial-intelligence-project-ideas/461 (projetos)
+https://scipy-lectures.org/intro/numpy/exercises.html (exercicios scipy)
+https://www.w3schools.com/python/scipy/exercise.php (exercicios scipy)
+https://numpy.org/doc/1.16/reference/routines.random.html (numpy.random referencia)
+
+matplotlib:
+https://www.geeksforgeeks.org/matplotlib-practice-exercise-and-solutions/
+https://www.w3resource.com/graphics/matplotlib/
+
+seaborn:
+https://harvard-iacs.github.io/2019-CS109A/labs/lab-5/student/ (exercicios seaborn)
+https://www.goconqr.com/speicherkarte/14155333/machine-learning-seaborn-exercises (exercicios seaborn)
+https://www.kaggle.com/code/saikiranvepamani/seaborn-exercises/notebook (exercicios seaborn)
