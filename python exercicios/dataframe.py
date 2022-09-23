@@ -137,6 +137,111 @@ df[df['score'].between(15, 20)]
 
 
 
+#11. Write a Pandas program to select the rows where number
+#of attempts in the examination is
+#less than 2 and score greater than 15.
+
+exam_data = {
+'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+            'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+df = pd.DataFrame(exam_data, index=labels)
+df
+df[(df['attempts'] < 2) & (df['score'] > 15)]
+
+#12. Write a Pandas program to change the score in row 'd' to 11.5.
+exam_data = {
+'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+            'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+df = pd.DataFrame(exam_data, index=labels)
+df
+
+df['score'].loc['d'] = 11.5
+df
+
+
+#13. Write a Pandas program to calculate the sum of
+#the examination attempts by the students.
+
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael', 'Matthew',
+                      'Laura', 'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no',
+            'yes', 'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df = pd.DataFrame(exam_data, index=labels)
+df
+df['attempts'].sum()
+
+
+
+
+#14. Write a Pandas program to calculate the mean score for
+#each different student in DataFrame.
+
+df['score'].mean()
+
+#15. Write a Pandas program to append a new row 'k' to data
+#frame with given valuesfor each column. Now delete the new row
+#and return the original DataFrame.
+
+
+
+df.loc['k'] = np.array(['zézinho', 44.2, 0, 'no'])
+df
+df.drop('k',axis=0, inplace=True)
+df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
