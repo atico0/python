@@ -9,7 +9,8 @@ Created on Sat Sep 17 20:04:37 2022
 #https://www.w3resource.com/python-exercises/python-basic-exercises.php
 
 
-#1. Write a Python program to print the following string in a specific format
+#1. Write a Python program to print the
+#following string in a specific format
 
 print( '''
       Twinkle, twinkle, little star,
@@ -116,6 +117,163 @@ calendar.Calendar().monthdatescalendar(2022, 5)
 ano = int(input('Digite ano: '))
 mes= int(input('Digite mês: '))
 print(calendar.month(ano,mes))
+
+
+
+#13. Write a Python program to print the following 'here document'.
+
+
+
+with open('here doc.txt') as f:
+    texto = f.read()
+    print(texto)
+
+
+print('''a string that you "don't" have to escape
+This
+is a ....... multi-line
+heredoc string --------> example''')
+
+
+
+#14. Write a Python program to calculate
+#number of days between two dates.
+
+
+data1 = (2014, 7, 2)
+data2 = (2014, 7, 11)
+
+dif = abs((data1[0] - data2[0]) * 365 + (data1[1] - data2[1]) * 30 + 
+      (data1[2] - data2[2])) 
+#esse jeito tá errado pq nem todo mês tem 30 dias
+
+import datetime
+
+data1 = datetime.date(2010, 7, 2)
+data2 = datetime.date(2014, 7, 11)
+
+dif = abs(data1 - data2)
+print(dif)
+
+
+#15. Write a Python program to get the
+#volume of a sphere with radius 6.
+
+from math import pi
+
+raio = float(input('Digite o raio da esfera: '))
+vol = (3/4)*pi*raio**3
+print(vol)
+
+
+#16. Write a Python program to get the difference between
+#a given number and 17, if the number is greater than 17 return
+#double the absolute difference.
+
+num = float(input('Digite um número: '))
+dif = num - 17
+
+if num > 17:
+    dif = 2 * dif
+else:
+    dif = abs(dif)
+print(dif)
+
+
+#17. Write a Python program to test whether a number
+#is within 100 of 1000 or 2000.
+
+def proximo(n):
+    return abs(1000-n) <=100 or abs(2000-n) <=100 
+
+proximo(1000)
+proximo(1100)
+proximo(1200)
+proximo(2000)
+proximo(1900)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
