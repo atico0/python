@@ -152,26 +152,46 @@ np.less_equal([1e10,1e-7, 5], [1.00001e10,1e-8, 5])
 
 
 
+#11. Write a NumPy program to create an element-wise comparison
+#(equal, equal within a tolerance) of two given arrays.
 
 
+x = np.array([72, 79, 85, 90, 150, -135, 120, -10, 60, 100])
+y = np.array([72, 79, 85, 90, 150, -135, 120, -10, 60, 100.000001])
+
+np.equal(x, y)
+np.allclose(x, y)
+?np.allclose
+
+#12. Write a NumPy program to create an array with the values
+#1, 7, 13, 105 and determine the size of the
+#memory occupied by the array.
+  
+x = np.array([1, 7, 13, 105])
+x.size
+x.itemsize
+x.size * x.itemsize
+np.size(x)
+?np.size
+
+?x.itemsize
+
+#13. Write a NumPy program to create an array of
+#10 zeros,10 ones, 10 fives.
+
+np.array(([0]*10 + [1]*10 + [5]*10))
 
 
+#14. Write a NumPy program to create an array
+#of the integers from 30 to 70.
+
+np.arange(30, 71)
 
 
+#15. Write a NumPy program to create an array of 
+#all the even integers from 30 to 70.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+np.arange(30, 71, 2)
 
 
 
