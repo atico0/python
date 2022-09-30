@@ -161,23 +161,54 @@ print(dif)
 
 from math import pi
 
+#inputando o raio da esfera
 raio = float(input('Digite o raio da esfera: '))
+#calculando o volume
 vol = (3/4)*pi*raio**3
+#pritando o volume
 print(vol)
+
+#fazendo a mesma coisa acima como uma função
+def vol_esfera(raio):
+    volume = (3/4)*pi*raio**3
+    return volume
+
+#testando a função
+vol_esfera(1)
 
 
 #16. Write a Python program to get the difference between
 #a given number and 17, if the number is greater than 17 return
 #double the absolute difference.
 
+#pegando o input de um número real
 num = float(input('Digite um número: '))
+
+#calculando a diferença entre num é 17
 dif = num - 17
 
+#checando se um número é maior que 17
 if num > 17:
+    #retornando 2 vezes a difenrença entre num e 17
     dif = 2 * dif
 else:
+    #calculando o valor absoluto da diferença entre num e 17
     dif = abs(dif)
 print(dif)
+
+#fazendo a mesma coisa que acima mas como uma função
+def dif_17(num):
+    dif = num - 17
+    if num > 17:
+        result = 2 * dif
+    else:
+        result = abs(dif)
+    return result
+
+dif_17(1)
+dif_17(17)
+dif_17(18)
+dif_17(20)
 
 
 #17. Write a Python program to test whether a number
@@ -359,62 +390,6 @@ def is_in_lista(lista, val):
 #testando função
 is_in_lista([1, 2, 3, 5], 5)
 is_in_lista([1, 2, 3, 5], 6)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
