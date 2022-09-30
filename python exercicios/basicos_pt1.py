@@ -184,13 +184,293 @@ print(dif)
 #is within 100 of 1000 or 2000.
 
 def proximo(n):
-    return abs(1000-n) <=100 or abs(2000-n) <=100 
+    #testando se a distância entre 1000 ou
+    #2000 e n é menor igual que 100
+    teste = abs(1000-n) <=100 or abs(2000-n) <=100  
+    #retornando o resultado do teste
+    return teste
 
 proximo(1000)
 proximo(1100)
 proximo(1200)
 proximo(2000)
 proximo(1900)
+
+
+#18. Write a Python program to calculate the sum of
+#three given numbers, if the values are equal then
+#return three times of their sum.
+
+#pegando números
+n1 = float(input('N1: '))
+n2 = float(input('N2: '))
+n3 = float(input('N3: '))
+
+#vendo se são iguais
+if n1 == n2 == n3:
+    #calculando o triplo da soma 
+    print(3 * (n1 + n2 + n3))
+else:
+    #calculando a soma
+    print(n1 + n2 + n3)
+    
+    
+    
+#19. Write a Python program to get a new string from a 
+#given string where "Is" has been added to the front. 
+#If the given string already begins with  "Is" then return
+#the string unchanged. Go to the editor
+
+
+def add_is(string):
+    #vendo se a string começa com 'Is'
+    if string[:2] == 'Is':
+        #retornando a string
+        return string
+    #adicionando 'Is no começo da string
+    return 'Is' + string
+#testando função
+add_is('asdasd')
+add_is('Isasdasdsa')
+add_is('Is')
+add_is('B')
+'B'[:2]
+
+
+#20. Write a Python program to get a string which is n
+#(non-negative integer) copies of a given string.
+
+
+def n_string(string, n):
+    #testtando se o número é não negativo
+    if n<0:
+        print('Não aceitamos valores negativos')
+        return ''
+    #retornando a string repetida n vezes
+    return string * n
+
+#testtando a função
+n_string('string', 3)
+n_string('string', 0)
+n_string('string', -1)
+
+
+
+#21. Write a Python program to find whether
+#a given number (accept from the user) is even or
+#odd, print out an appropriate message to the user.
+
+
+def par_impar(num):
+    #testando se o resto da divisão entre num e 2 é diferente de 0
+    if num % 2:
+        print('é impar')
+    else:
+        print('é par')
+
+#testando a função
+par_impar(1)
+par_impar(-1)
+par_impar(2)
+par_impar(-2)
+par_impar(0)
+
+
+#22. Write a Python program to count the
+#number 4 in a given list.
+
+#definindo lista
+lista = [1,2,3,4,5,6,4,1,3]
+
+#contando a quantidade de 4's (jeito mais rapido)
+lista.count(4)
+
+def contar(lista, num):
+    #definindo contador
+    cont = 0
+    #percorrendo a lista
+    for i in lista:
+        #testando se o i-ésimo número da lista é igual a num
+        if i == num:
+            #incrementando o contador
+            cont += 1
+    return cont
+contar(lista, 4)
+
+contar([1,1,1,4,5,6,1,1], 1)
+
+
+#23. Write a Python program to get the n (non-negative integer)
+#copies of the first 2 characters of a given string.
+#Return the n copies of the whole string if the length is less than 2.
+
+def string_copias(string, n):
+    #vendo se a string é maior igual a 2
+    if len(string) >= 2:
+        #retornando os 2 primeiros chars da string repetidas n vezes
+        return string[:2] * n
+    #retornando a string repetida n vezes
+    return string * n
+    
+#testando função
+string_copias('abc', 2)
+string_copias('abc', 3)
+string_copias('a', 4)
+
+
+#24. Write a Python program to test
+#whether a passed letter is a vowel or not.
+
+def is_vowel(vowel):    
+    #testando se vowel é uma vogal
+    teste = vowel in 'aeiouAEIOU'
+    return teste
+
+def is_vowel2(vowel):    
+    vogais = 'aeiouAEIOU'
+    #percorrendo a lista de vogais
+    for i in vogais:
+        #testando se a i-ésima vogal é igual
+        if vowel == i:
+            return True
+    return False
+
+
+#testando a função
+is_vowel('a')
+is_vowel('A')
+is_vowel('b')
+is_vowel('U')
+is_vowel2('a')
+is_vowel2('A')
+is_vowel2('b')
+is_vowel2('U')
+
+#25. Write a Python program to check whether a
+#specified value is contained in a group of values.
+
+def is_in_lista(lista, val):
+    #testando se o valor está na lista
+    teste = val in lista
+    #retornando o teste
+    return teste
+
+
+#testando função
+is_in_lista([1, 2, 3, 5], 5)
+is_in_lista([1, 2, 3, 5], 6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

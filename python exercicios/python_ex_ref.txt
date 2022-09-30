@@ -8,8 +8,6 @@ https://data-flair.training/blogs/data-science-project-ideas/ (projetos)
 https://www.interviewbit.com/blog/data-science-projects/ (projetos)
 https://towardsdatascience.com/12-cool-data-science-projects-ideas-for-beginners-and-experts-fc75b5498e03 
 https://www.projectpro.io/article/artificial-intelligence-project-ideas/461 (projetos)
-https://scipy-lectures.org/intro/numpy/exercises.html (exercicios scipy)
-https://www.w3schools.com/python/scipy/exercise.php (exercicios scipy)
 https://numpy.org/doc/1.16/reference/routines.random.html (numpy.random referencia)
 
 matplotlib:
@@ -20,3 +18,15 @@ seaborn:
 https://harvard-iacs.github.io/2019-CS109A/labs/lab-5/student/ (exercicios seaborn)
 https://www.goconqr.com/speicherkarte/14155333/machine-learning-seaborn-exercises (exercicios seaborn)
 https://www.kaggle.com/code/saikiranvepamani/seaborn-exercises/notebook (exercicios seaborn)
+
+numpy
+https://github.com/rougier/numpy-100/blob/master/100_Numpy_exercises.ipynb
+
+scipy
+https://scipy-lectures.org/intro/numpy/exercises.html
+https://www.w3schools.com/python/scipy/exercise.php
+
+
+
+
+
