@@ -200,34 +200,99 @@ df['score'].mean()
 #and return the original DataFrame.
 
 
-
+#adicionando a linha k 
 df.loc['k'] = np.array(['zézinho', 44.2, 0, 'no'])
 df
+#removendo linha k
 df.drop('k',axis=0, inplace=True)
 df
 
 
+#16. Write a Pandas program to sort the DataFrame first by 'name'
+#in descending order, then by 'score' in ascending order.
+
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael', 'Matthew', 'Laura',
+                      'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df = pd.DataFrame(data=exam_data, index=labels)
+df
+
+df.loc['k'] = ['Dima', 443, 2, 'no']
+df['score'].apply(type)
+
+df.sort_values(by='name', ascending=False)
+df.sort_values(by= 'score', ascending=True)
+
+df.sort_values(by=['name', 'score'], ascending=[False, True])
+
+
+#17. Write a Pandas program to replace the 'qualify' column contains
+#the values 'yes' and 'no' with True and False.
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael', 'Matthew', 'Laura',
+                      'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df = pd.DataFrame(data=exam_data, index=labels)
+
+df['qualify'] = df['qualify'] == 'yes'
+df
+df['qualify'] = df['qualify'].map({True: 'yes', False: 'no'})
+df
 
 
 
+#18. Write a Pandas program to change the name 'James' to
+#'Suresh' in name column of the DataFrame.
 
+df['name'].loc['d'] = 'Suresh'
+df
 
+#19. Write a Pandas program to delete the 
+#'attempts' column from the DataFrame.
 
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael', 'Matthew', 'Laura',
+                      'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df = pd.DataFrame(data=exam_data, index=labels)
+df
 
+df.drop('attempts', axis=1, inplace=True)
+df
+df.pop('name')
+df
 
+#20. Write a Pandas program to insert
+#a new column in existing DataFrame.
 
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael', 'Matthew', 'Laura',
+                      'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+            'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df = pd.DataFrame(data=exam_data, index=labels)
+df
 
-
-
-
-
-
-
-
-
-
-
-
+df['nova'] = np.nan
+df
 
 
 
