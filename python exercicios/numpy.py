@@ -195,41 +195,74 @@ np.arange(30, 71, 2)
 
 
 
+#16. Write a NumPy program to create a 3x3 identity matrix.
+
+#criando matriz identidade 3x3
+np.eye(3)
+
+#17. Write a NumPy program to generate
+#a random number between 0 and 1.
+
+?np.random.random
+#pegando um vetor com 3 valores aleatórios entre 0 e 1
+np.random.random(3)
+
+?np.random.rand
+#pegando um vetor de dim 3x2x4 com valores aleatórios entre 0 e 1
+np.random.rand(3,2,4)
+#na primeira função nós só controlamos a quant de elementos
+#já na segunda nós controlamos as dimensões
+
+
+?np.random.random_integers
+#pegando um vetor com 3 valores aleatórios
+#entre 0 e 1 seguindo uma distribuição uniforme discreta
+np.random.random_integers(size = 3, low=0, high=1)
+
+?np.random.normal
+#pegando um vetor com 3 valores aleatórios
+#entre 0 e 1 seguindo uma distribuição normal com média 0 e  var 1
+np.random.normal(0,1,3) #essa foi a função da resposta
+
+#18. Write a NumPy program to generate an array of 15 random numbers
+#from a standard normal distribution.
+
+?np.random.randn
+#pegando uma matrix 3x2 com valores aleatórios entre 0 e 1
+np.random.randn(3,5,2)
+np.random.normal(0,1,15)
+#Na primeira função nos podemos escolher as dimensões e a quantidade 
+#mas não os parâmetros das funções já na segunda nos podemos
+#escolher os parâmentros e a quant de elementos mas não as dimensões 
+
+
+
+#19. Write a NumPy program to create a vector with values ranging
+#from 15 to 55 and print all values except the first and last.
+
+vetor = np.random.random_integers(size = 55, low=15, high=55)
+vetor
+vetor[1:-1]
+
+veotor = np.arange(15,55)
+vetor[1:-1]
 
 
 
 
 
+#20. Write a NumPy program to create a 3X4
+#array using and iterate over it.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#criando matriz 3x4 de valores aleatórios| Xij~N(0,1)
+matriz = np.random.randn(3,4)
+matriz
+#iterando sobre as linhas
+for i in range(matriz.shape[0]):
+    #iterando sobre as colunas
+    for j in range(matriz.shape[1]):
+        #mostrando elemento da linha i e coluna j
+        print(matriz[i,j])
 
 
 
