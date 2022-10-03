@@ -116,47 +116,167 @@ conta_igual2(['abc', 'xyz', 'aba', '1221'])
 
 
 
+#6. Write a Python program to get a list,
+#sorted in increasing order by the last
+#element in each tuple from a given list of non-empty tuples.
+
+
+#Sample List : [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+#Expected Result : [(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)]
+
+a = [3,2,4,5]
+sorted(a)
+a.reverse()
+a.sort()
+a
+dicio = {1:'a', 2:'b'}
+dicio[2]
+dicio[3] = '3'
+dicio
+
+def organiza_tuplas(lista):
+    #definindo dicionario que vai guardar
+    #os maiores valores e seus index
+    dicio = {}
+    #definindo a lista final a ser retornada
+    lista_final = []
+    #percorrendo a lista de tuplas
+    for i in range(len(lista)):
+        #adicionando elementos no dicionario com a chave igual
+        #ao ultimo elemento da tupla no indice i e valor igual
+        #ao indice i
+        dicio[lista[i][-1]] = i
+    #definindo a lista de maiores como os as chaves do dicionario
+    #ordenadas em ordem crescente
+    maiores = sorted(list(dicio.keys()))
+    #percorrendo a lista de maiores
+    for i in maiores:
+        #adicionando a lista final o elemento da lista (tupla)
+        #que está no indice que está dentro do dicio com a chave i
+        lista_final.append(lista[dicio[i]])
+    return lista_final
+    
+
+#função da resposta
+def last(n): return n[-1]
+
+def sort_list_last(tuples):
+  return sorted(tuples, key=last)
+
+#testrando funções
+organiza_tuplas([(2, 5,9), (1, 2,0,0,0), (4, 4), (2, 3), (2, 1)])
+sort_list_last([(2, 5,9), (1, 2,0,0,0), (4, 4), (2, 3), (2, 1)])
+
+
+
+#7. Write a Python program to remove duplicates from a list.
+
+def remove_duplicatas(lista):
+    #definindo lista final
+    lista_final = []
+    #percorrendo a lista
+    for c in lista:
+        #verificando se o elemento c pertence a lista final
+        if c in lista_final:
+            pass
+        else:
+            #adicionando o elemento c caso ele não pertença
+            lista_final.append(c)
+    return lista_final
+
+def remove_duplicatas2(lista):
+    return list(set(lista))
+
+remove_duplicatas([1,2,2,5,8,0,5])
+remove_duplicatas2([1,2,2,5,8,0,5])
 
 
 
 
+#8. Write a Python program to check a list is empty or not.
+
+bool([0])
+
+
+def vazia(lista):
+    #checando se a lista tem elementos
+    if lista:
+        print('Não vazia')
+    else:
+        print('Vazia')
+
+#testando função
+vazia([])
+vazia([4])
+vazia(0)
+vazia(1)
+
+
+#9. Write a Python program to clone or copy a list.
+
+def copia(lista):
+    #definindo copia
+    copia = []
+    #percorrendo os elementos da lista
+    for c in lista:
+        #adicionando os elementos da lista original na cópia
+        copia.append(c)
+    return copia
+
+def copia2(lista):
+    #retornando cópia da lista
+    return list(lista)
+
+
+#testando função
+copia([1,2,3,4,3])
+copia2([1,2,3,4,3])
 
 
 
 
+#10. Write a Python program to find the list of words that are
+#longer than n from a given list of words.
+
+
+def longo_n(lista, n):
+    #definindo lista final
+    lista_final = []
+    #percorrendo os elementos da lista
+    for c in lista:
+        #testano se o elemento c tem tamanho maior que n
+        if len(c) > n:
+            #adicionando o elemento c a lista final
+            lista_final.append(c)
+    return lista_final
 
 
 
+def longo_n2(string, n):
+    #define lista como o split das string original
+    lista = string.split()
+    #definindo lista final
+    lista_final = []
+    #percorrendo os elementos da lista
+    for c in lista:
+        #testano se o elemento c tem tamanho maior que n
+        if len(c) > n:
+            #adicionando o elemento c a lista final
+            lista_final.append(c)
+    return lista_final
 
 
+#testando funções
+longo_n(['sdfgfdsfgf', 'zdaf', 'top', 'a', 'b', 'ldkfgjfdf', 'aaaaa'],
+        2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+longo_n(['sdfgfdsfgf', 'zdaf', 'top', 'a', 'b', 'ldkfgjfdf', 'aaaaa'],
+        3)
+longo_n(['sdfgfdsfgf', 'zdaf', 'top', 'a', 'b', 'ldkfgjfdf', 'aaaaa'],
+        4)
+longo_n2('sdfgfdsfgf zdaf  top a  b ldkfgjfdf aaaaa',2)
+longo_n2('sdfgfdsfgf zdaf  top a  b ldkfgjfdf aaaaa',3)
+longo_n2('sdfgfdsfgf zdaf  top a  b ldkfgjfdf aaaaa',4)
 
 
 
