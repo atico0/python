@@ -379,6 +379,248 @@ df
 
 
 
+#21. Write a Pandas program to iterate over rows in a DataFrame.
+
+exam_data = [{'name':'Anastasia', 'score':12.5},
+             {'name':'Dima','score':9},
+             {'name':'Katherine','score':16.5}]
+
+df = pd.DataFrame(exam_data)
+df
+
+#percorrendo as linhas do dataframe
+for i in range(df.shape[1]):
+    print(df.iloc[i, :])
+
+for index, row in df.iterrows(): #resposta do site
+    print(row['name'], row['score'], index)
+
+for index, row in df.iteritems():
+    print(row,  index)
+
+
+
+#22. Write a Pandas program to get list from DataFrame column headers.
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James',
+                      'Emily', 'Michael',
+                      'Matthew', 'Laura', 'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no',
+            'yes', 'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+df = pd.DataFrame(exam_data, index=labels)
+df
+#mostrando as colunas do dataframe
+df.columns
+df.axes[1]
+
+
+#23. Write a Pandas program to rename columns of a given DataFrame.
+
+#renomeando algumas linhas e colunas do dataframe
+df.rename(index = {'a':'aa', 'd':'ddd', 'b':'b2'},
+          columns={'name': 'NAME', 'score': 'SCORE'}, inplace=True)
+df
+
+
+#24. Write a Pandas program to select rows from a given DataFrame
+#based on values in some columns.
+
+#condição:
+#valores da coluna attempts que são iguais a 3
+cond = df['attempts'] == 3
+#pegando valores do dataframes que atendem a condição 1
+df[cond]
+
+
+#25. Write a Pandas program to change the
+#order of a DataFrame columns.
+
+#reatribuindo o dataframe com a ordem das colunas trocadas
+df = df.iloc[:, [1,0,2,3]]
+df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
