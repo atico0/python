@@ -27,6 +27,22 @@ https://scipy-lectures.org/intro/numpy/exercises.html
 https://www.w3schools.com/python/scipy/exercise.php
 
 
+#testes de hipoteses
+https://towardsdatascience.com/hypothesis-testing-with-python-step-by-step-hands-on-tutorial-with-practical-examples-e805975ea96e
+https://machinelearningmastery.com/statistical-hypothesis-tests-in-python-cheat-sheet/
+
+#Hypothesis
+https://hypothesis.readthedocs.io/en/latest/
+
+
+#scipy.stats
+https://docs.scipy.org/doc/scipy/reference/stats.html
+
+
+
+
+
+
 
 
 

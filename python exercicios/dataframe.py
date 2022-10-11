@@ -286,7 +286,7 @@ df
 
 #adicionando elemento na linha k para comparação
 df.loc['k'] = ['Dima', 443, 2, 'no']
-
+df
 #vendo o tipo dos dados na coluna score
 #obs: fiz isso pq antes tava definindo a linha k como array e 
 #isso deixa todos os elementos da linha k como strings
@@ -444,39 +444,113 @@ df = df.iloc[:, [1,0,2,3]]
 df
 
 
+#26. Write a Pandas program to add one row in an existing DataFrame.
+
+#definindo dicionario
+d = {'col1': [1, 4, 3, 4, 5],
+     'col2': [4, 5, 6, 7, 8], 'col3': [7, 8, 9, 0, 1]}
+
+#definindo dataframe
+df = pd.DataFrame(data=d)
+df
+#adicionando linha a mais (não da pra usar o iloc)
+df.loc[5] = [10, 11, 12]
+df
+#definindo outro dicionario
+d2 = {'col1': 11, 'col2': 12, 'col3': 13}
+#adicionando o dicionario d2
+df = df.append(d2, ignore_index=True)
+df
+#definindo dicionario de listas
+d3 = {'col1': [12, 13] , 'col2': [12, 13], 'col3': [12, 13]}
+#adicionando as listas ao dataframe
+df.append(d3, ignore_index=True)
 
 
 
+#27. Write a Pandas program to write a DataFrame to
+#CSV file using tab separator.
+
+df
+#exportando dataframe com separador \t
+df.to_csv('C:\\Users\\luisg\\OneDrive\\Documentos\\GitHub\\python\\python exercicios\\ex27.csv',
+          sep='\t', index=False)
+#importando dataframe
+df = pd.read_csv('C:\\Users\\luisg\\OneDrive\\Documentos\\GitHub\\python\\python exercicios\\ex27.csv')
+df
+
+
+#28. Write a Pandas program to count city wise number of people
+#from a given of data set (city, name of the person).
+
+#definindo dataframe
+df1 = pd.DataFrame(
+    {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+              'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+'city': ['California', 'Los Angeles', 'California', 
+         'California', 'California', 'Los Angeles', 'Los Angeles',
+         'Georgia', 'Georgia', 'Los Angeles']})
+df1
+#agrupando os elementos por cidades
+cidades = df1.groupby('city')
+#contando os agrupamentos
+cidades.count()
+#resolução do site
+g1 = df1.groupby(["city"]).size().reset_index(name='Number of people')
+g1
 
 
 
+#29. Write a Pandas program to delete DataFrame row(s)
+#based on given column value.
+
+#definindo dataframe
+d = {'col1': [1, 4, 3, 4, 5], 'col2': [4, 5, 6, 7, 8],
+     'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
+df
+#apagando linha 3 e 4
+df.drop([3,4], axis=0, inplace=True)
+df
+
+#definindo dataframe
+d = {'col1': [1, 4, 3, 4, 5], 'col2': [4, 5, 6, 7, 8],
+     'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
+#reatribuindo o dataframe mas só com as linhas 1 e 2
+#(na prática o mesmo de antes)
+df = df.iloc[[1,2], :]
+df
+#ATÉ AQUI TAVA FAZENDO ERRADO MAS VOU DEIXAR SÓ PRA PODER VER DPS
+
+#definindo dataframe
+d = {'col1': [1, 4, 3, 4, 5], 'col2': [4, 5, 6, 7, 8],
+     'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
+
+#pegando os elementos onde o valor da coluna 2 e diferente de 5
+#mas de varios jeitos diferentes
+df[df['col2'] !=5]
+df[df.col2 !=5]
+df[df.loc[:, 'col2'] !=5]
+df[df.iloc[:, 2] !=5]
 
 
 
+#30. Write a Pandas program to widen output
+#display to see more columns.
 
+#definindo dataframe
+d = {'col1': [1, 4, 3, 4, 5], 'col2': [4, 5, 6, 7, 8],
+     'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#não faço idéia doque isso faz
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+print("Original DataFrame")
+print(df)
 
 
 
