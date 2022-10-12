@@ -149,12 +149,15 @@ print(maior_tamanho(lista))
 #9. Write a Python program to remove the nth index
 #character from a nonempty string.
 
-string = 'string com n valores'
+string = 'apaga o indice n da string'
 
 def apaga_n(string, n):
+    #cria nova string com a string original mas
+    #sem o n-ésimo caractere
     resultado = string[:n] + string[n+1:]
     return resultado
 
+#testando a função
 apaga_n(string, 1)
 apaga_n(string, 0)
 
@@ -164,7 +167,11 @@ apaga_n(string, 0)
 
 string = 'string com n valores'
 string2 = 'abcde'
+
+#definindo função
 def mudanca(string):
+    #definindo a resultado igual a string original
+    #mas com o ultimo e os primeiro caracteres trocados
     resultado = string[-1] + string[1:-1] + string[0]
     return resultado
 
@@ -173,40 +180,128 @@ mudanca(string2)
 
 
 
+#11. Write a Python program to remove the characters which have
+#odd index values of a given string.
+
+string = 'abcdefghij'
+string[0::2]
+string2 = 'Python'
+string2[0::2]
+
+#definindo função
+def pega_par(string):
+    #definindo nova string só com os elementos da string 
+    #original que tem o indice par na string
+    nova_string = string[0::2]
+    #retornando nova_string
+    return nova_string
+
+#função da resposta
+def pega_par2(string):
+    #definindo nova string
+    nova_string = ''
+    #percorrendo a string pelos indices
+    for i in range(len(string)):
+        #vendo se o indice é par
+        if i % 2 == 0:
+            #concatenando a nova_string com a i-ésima string caso
+            #a condição for True
+            nova_string += string[i]
+    #retornando nova_string
+    return nova_string
+
+
+#testando funções
+pega_par(string)
+pega_par(string2)
+pega_par2(string)
+pega_par2(string2)
+
+
+
+
+#12. Write a Python program to count the occurrences
+#of each word in a given sentence.
+
+#definindo função
+def conta_palavras(string):
+    #definindo lista como palavras de uma string
+    lista = string.lower().split()
+    #definindo dicionario
+    dicio = {}
+    #percorrendo a lista de palavras
+    for i in range(len(lista)):
+        #testando se a i-ésima palavra da lista
+        #é uma chave do dicionario
+        if lista[i] in list(dicio.keys()):
+            #incrementando 1 ao elemento do dicionario 
+            #de chave lista[i]
+            dicio[lista[i]] += 1
+        else:
+            #adicionando o elemento 1 ao dicionario 
+            #com a chave lista[i] caso essa chave não conste no dicio
+            dicio[lista[i]] = 1
+    #retornando dicionario
+    return dicio
+
+
+#testando função
+
+string = 'nova conta python news nova minha cabra CABRA'
+
+conta_palavras(string)
+conta_palavras('the quick brown fox jumps over the lazy dog.')
+
+
+
+
+#13. Write a Python script that takes input from the user
+#and displays that input back in upper and lower cases.
+
+#pegando input da string
+string = input('Digite o input: ')
+#printando string em maiuscula
+print(f'EM LETRA MAIUSCULA: {string.upper()}')
+#printando string em minuscula
+print(f'EM LETRA MINUSCULA: {string.lower()}')
 
 
 
 
 
+#14. Write a Python program that accepts a comma separated sequence
+#of words as input and prints the unique words in
+#sorted form (alphanumerically).
+
+string = 'red, white, black, red, green, black'
+
+#definindo função
+def ordena_string(string):
+    #definindo a lista como os elementos da string divididos por ', '
+    lista = string.split(', ')
+    #ordenando a lista
+    lista.sort()
+    #criando string que é composta pelos elementos da lista ordenada
+    #separados por ', '
+    nova_string = ', '.join(lista)
+    #retornando nova string
+    return nova_string
+#testando função
+ordena_string(string)    
 
 
+#15. Write a Python function to create the HTML string
+#with tags around the word(s).
 
+#definindo função
+def add_tags(char, string):
+    #criando nova string em formato de tag
+    nova_string = '<'+char+'>'+string+'<'+char+'>'
+    #retornando nova_string
+    return nova_string
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+add_tags('i', 'Python')
+add_tags('b', 'Python Tutorial')
 
 
 
