@@ -393,41 +393,146 @@ is_in_lista([1, 2, 3, 5], 6)
 
 
 
+#26. Write a Python program to create a histogram
+#from a given list of integers.
+
+import matplotlib.pyplot as plt
+#fazendo um histograma
+plt.hist([1,2,2,3,3,3])
+
+#definindo função
+def histograma(char, lista):
+    #pegando os elementos unicos da lista e ordenando
+    unicos = sorted(list(set(lista)))
+    #percorrendo os elementos unicos 
+    for i in range(len(unicos)):
+        #contando quantas vezes cada elemento da lista aparece
+        quantidade = lista.count(unicos[i])
+        #printando o elemento da lista unicos e o char multiplicado
+        #pela quantidade de vzs que o esse elemento
+        #do unicos aparece na lista
+        print(unicos[i], char*quantidade)
+
+#testando a função
+histograma('#', [1,2,2,3,3,3, 2.1, 2.1, 2.1, 2.1, 2.1])
+histograma('JK', [1,2,2,3,3,3, 2.1, 21, 2.1, 2.1, 65, 22, -1])
+
+#Solução do exercicio (TA COMPLETAMENTE DIFERENTE
+#DO MEU MAS EU CREIO QUE EU SOU O CERTO DA HISTORIA)
+def histogram( items ):
+    #percorrendo a lista de intens
+    for n in items:
+        #criando output
+        output = ''
+        #definindo o times como o n-ésimo item da lista times
+        times = n
+        #criando um loop enquanto o times é positivo
+        while( times > 0 ):
+          #adicionando '*' ao output
+          output += '*'
+          #decrementando a variável times
+          times = times - 1
+        #printando o output
+        print(output)
+
+histogram([2, 3, 6, 5])
+histogram([2, 3, 6, 5, 19])
+
+
+#27. Write a Python program to concatenate all elements
+#in a list into a string and return it.
+
+
+def concatena(lista):
+    #definindo string vazia
+    string = ''
+    #percorrendo lista
+    for c in lista:
+        #incrementando string com o elemento c da 
+        #lista convertido para uma string
+        string += str(c)
+    #retornando string
+    return string
+
+#testando função
+concatena([1,2,3,'a','b','c'])
+concatena([1,2,'asdads', {11:'a'}])
+
+#não deu pra fazer usando essa função pq ela só serve para listas de strs
+'#'.join(['1','2','3'])
 
 
 
+#28. Write a Python program to print all even numbers
+#from a given numbers list in the same order and
+#stop the printing if any numbers that come
+#after 237 in the sequence.
+
+def evens(lista):
+    #pecorrendo a lista
+    for c in lista:
+        #vendo se o o elemento c da lista é 237
+        if c == 237:
+            #pritando o c
+            print(c)
+            #saindo do loop
+            break
+        #vendo se o elemento é par
+        if c%2==0:
+            #pritando caso seja
+            print(c)        
+
+#testando função
+evens([1,2,3,4,5,6,7,8,9])
+evens([1,2,3,4,5,33,228,334,237,2,6,7])
+
+evens([386, 462, 47, 418, 907, 344, 236, 375, 823,
+       566, 597, 978, 328, 615, 953, 345, 
+    399, 162, 758, 219, 918, 237, 412, 566, 826,
+    248, 866, 950, 626, 949, 687, 217, 
+    815, 67, 104, 58, 512, 24, 892, 894, 767,
+    553, 81, 379, 843, 831, 445, 742, 717, 958,743, 527])
 
 
 
+#29. Write a Python program to print out a set containing all the
+#colors from color_list_1 which are not present in color_list_2.
+
+
+#definindo função
+def cores_lista(l1, l2):
+    #definindo lista_final
+    lista_final = []
+    #percorrendo a l1
+    for c in l1:
+        #checando se c não está em l2 e nem na lista final
+        if (not c in l2) and (not c in lista_final):
+            #adicionando c a lista_final caso seja verdade
+            lista_final.append(c)
+    #retornando a lista final
+    return lista_final
+
+#testando função
+color_list_1 = set(["White", "Black", "Red"])
+color_list_2 = set(["Red", "Green"])
+
+cores_lista(color_list_1, color_list_2)
+
+not 3 > 5
 
 
 
+#30. Write a Python program that will accept the base and height
+#of a triangle and compute the area. Go to the editor
 
+#definindo função
+def area_tri(base, altura):
+    #retornando área do triângulo
+    return base*altura/2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#testando função
+area_tri(3, 5)
+area_tri(3, 2)
 
 
 
