@@ -556,52 +556,109 @@ print(df)
 
 
 
+#31. Write a Pandas program to select a row of
+#series/dataframe by given integer index.
+
+
+
+#definindo o df
+d = {'col1': [1, 4, 3, 4, 5],
+     'col2': [4, 5, 6, 7, 8], 'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
+
+#escolhendo a linha
+row = int(input('Digite a linha do df: '))
+#mostrando a linha
+df.iloc[[row]] #desse jeito mostra na horizontal
+df.iloc[row]
+
+
+#32. Write a Pandas program to replace all the NaN values with
+#Zero's in a column of a dataframe.
+
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+                      'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes',
+                    'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
+
+#substituindo os Nan por 0
+df.fillna(0, inplace=True)
+df
+
+
+#33. Write a Pandas program to convert
+#index in a column of the given dataframe.
+
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+                      'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+                    'yes', 'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
+
+#Transpondo o dataframe
+#(não era isso que era pra fazer mas foi oque eu interpretei)
+
+#df = pd.DataFrame(data=df.values.reshape(df.shape[1], df.shape[0]),
+#                  index=df.columns, columns=df.index)
+df
+
+#colocando o index como uma coluna extra
+df.reset_index(level=0, inplace=True)
+df
+print(df.to_string(index=False))
+
+
+
+#34. Write a Pandas program to set a given value for particular
+#cell in  DataFrame using index value.
+
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
+
+#mudando valor da linha 8 e ultima coluna
+df.iloc[8, -1] = 10.2
+
+#essa função não funciona mais mas fazia o mesmo que a linha acima
+df.set_value(8, 'score', 10.2)
+
+#versão nova da função acima (funciona como um iloc)
+df.at[8, 'score'] 
+df.at[8, 'score'] = 10.2
+df
 
 
 
 
+#35. Write a Pandas program to count the NaN values in
+#one or more columns in DataFrame.
 
 
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+                      'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no',
+                    'yes', 'yes', 'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
+#calculando o total de valores NaN
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#em cada coluna
+df.isna().sum()
+#no df todo
+df.isna().sum().sum()
+#resposta do Exercicio
+print(df.isnull().values.sum())
 
 
 
