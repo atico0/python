@@ -83,6 +83,157 @@ techs.insert(6, 'aws')#se colocar o indice -1 ele vai pra penultima pos
 print(techs)
 
 
+#Exercise 6
+
+#The following list is given:
+#techs = ['python', 'django', 'sql', 'html', 'css']
+
+#Using the appropriate method pop
+#the last element out and assign it to the result variable.
+
+#In response, print the result and techs variables to
+#the console as shown below.
+
+
+techs = ['python', 'django', 'sql', 'html', 'css']
+result = techs.pop()
+print(result)
+print(techs)
+
+
+#Exercise 7
+#The following list is given:
+
+#techs = ['python', 'django', 'sql', 'html', 'css']
+
+#Using the appropriate method pop the item with index 1
+#out from the list and assign it to the result variable.
+
+#In response, print the result and techs variables
+#to the console as shown below.
+
+
+techs = ['python', 'django', 'sql', 'html', 'css']
+result = techs.pop(1)
+print(result)
+print(techs)
+
+
+
+
+
+
+
+
+
+
+#Exercise 8
+#The following list is given:
+
+#user_ids = ['0111', '0101', '1030', '0101', '3401', '0111', '1001']
+
+#Using the appropriate method, delete the first encountered element '0101'.
+
+#In response, print the techs variable to the console.
+
+user_ids = ['0111', '0101', '1030', '0101', '3401', '0111', '1001']
+user_ids.pop(user_ids.index('0101'))
+#user_ids.remove('0101') SOLUÇÃO DO EXERCICIO
+print(user_ids)
+
+
+
+#Exercise 9
+#The following list is given:
+
+#user_ids = ['0111', '0101', '1030', '0101', '3401', '0111', '1001']
+
+#and the user_id variable:
+
+#user_id = '1040'
+
+#When using the list.remove() method, attempting
+#to remove a value that is not in the
+#list results in a ValueError.
+
+#Try to remove the user_id value from the user_ids list using the
+#list.remove() method. If the value is not in the list, print
+#the following message to the console: 
+#"User with id '1040' is not in the list."
+
+
+user_ids = ['0111', '0101', '1030', '0101', '3401', '0111', '1001']
+
+user_id = '1040'
+
+try:
+    user_ids.remove(user_id)
+except:
+    print("User with id '1040' is not in the list.")
+
+
+
+
+
+
+#Exercise 10
+#The following list is given:
+
+#techs = ['python', 'django', 'sql', 'html', 'css']
+
+#Use the del statement to remove penultimate item from the techs list.
+
+#In response, print the techs list to the console.
+
+
+
+techs = ['python', 'django', 'sql', 'html', 'css']
+del(techs[-2])
+print(techs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
