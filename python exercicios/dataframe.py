@@ -661,105 +661,128 @@ df.isna().sum().sum()
 print(df.isnull().values.sum())
 
 
+#36. Write a Pandas program to drop a list
+#of rows from a specified DataFrame.
 
 
+d = {'col1': [1, 4, 3, 4, 5],
+     'col2': [4, 5, 6, 7, 8], 'col3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(d)
+df
+df.drop(labels=[2,4], axis=0, inplace=True)
+df
+#resposta do exercicio
+df = df.drop(df.index[[2,4]])
 
 
+#37. Write a Pandas program to reset index in a given DataFrame.
 
+#definindo dataframe
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+                      'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no',
+                    'yes', 'yes', 'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
+df
+#apagando linhas
+df.drop(labels=[0,1], axis=0, inplace=True)
+df
+#resetando linhas
+df.reset_index(inplace=True)
+df
 
 
 
+#38. Write a Pandas program to divide a DataFrame in a given ratio.
 
+#definindo df
+df = pd.DataFrame(np.random.randn(10,2))
+df
 
+#pegando uma amostra de 70% do dataframe
+part_70 = df.sample(frac=0.7, random_state=10)
+part_70
 
+#pegando as partes do datafrane que não pertencem a amostra de 70%
+part_30 = df.drop(labels=part_70.index, axis=0)
+part_30
 
 
 
+#39. Write a Pandas program to combining two series into a DataFrame.
 
+#definindo series
+serie1 = pd.Series(['100', '200', 'python', '300.12', '400'])
+serie1
+serie2 = pd.Series(['10', '20', 'php', '30.12', '40'])
+serie2
 
+#criando dataframe como junção das series como colunas
+df = pd.DataFrame(pd.concat([serie1, serie2], axis=1))
+df
 
 
+#40. Write a Pandas program to shuffle a given DataFrame rows.
 
+#definindo df
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily',
+                      'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+        'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+        'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+        'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes',
+                    'yes', 'no', 'no', 'yes']}
+df = pd.DataFrame(exam_data)
 
+#pegando amostra igual ao tamanho do df (em ordem aleatória)
+df.sample(len(df))
+#resposta do exercicio
+df.sample(frac=1)
 
 
 
+#41. Write a Pandas program to convert DataFrame column
+#type from string to datetime.
 
+#definindo serie
+s = pd.Series(['3/11/2000', '3/12/2000', '3/13/2000'])
 
+#definindo df
+df = pd.to_datetime(s)
+df
 
 
+#42. Write a Pandas program to rename a specific
+#column name in a given DataFrame.
 
+#definindo dataframe
+d = {'col1': [1, 2, 3], 'col2': [4, 5, 6], 'col3': [7, 8, 9]}
+df = pd.DataFrame(data=d)
+df
+#mudando o nome das colunas
+df.rename(columns={'col2':'COL2'}, inplace=True)
+df
 
 
+#43. Write a Pandas program to get a list of a
+#specified column of a DataFrame.
 
+d = {'col1': [1, 2, 3], 'COL2': [4, 5, 6], 'col3': [7, 8, 9]}
+df = pd.DataFrame(data=d)
 
+#pegando colunas especificas
+#NÃO ERA ISSO QUE ERA PRA FAZER MAS VOU DEIXAR AQUI
+df[['COL2', 'col1']]
+df.loc[:, ['COL2', 'col1']]
+df.iloc[:, [1,0]]
 
+#pegando a coluna 3 convertida pra lista
+df['col3'].tolist()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#44. Write a Pandas program to create a DataFrame from a Numpy array
+#and specify the index column and column headers.
 
 
 
