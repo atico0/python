@@ -78,6 +78,6 @@ companies = pd.DataFrame(dicio)
 print(companies)
 
 
-
-
+#conta que tia catita pediu pra fz
+28.70 + 15 + 26.43 + 16 +7.27
 
