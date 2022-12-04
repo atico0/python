@@ -472,8 +472,112 @@ print(russia)
 
 
 
+#Exercise 21
+#The following list is given:
+
+population = [
+    ('Istanbul', 'Turkey', 15462452),
+    ('Moscow', 'Russia', 12195221),
+    ('London', 'United Kingdom', 9126366),
+    ('Saint Petersburg', 'Russia', 5383890),
+    ('Berlin', 'Germany', 3748148),
+    ('Madrid', 'Spain', 3223334),
+    ('Kyiv', 'Ukraine', 2950800),
+    ('Rome', 'Italy', 2844750),
+    ('Paris', 'France', 2140526),
+    ('Minsk', 'Belarus', 1982444),
+]
+
+#Each item is a tuple that contains three pieces of information:
+#city, country, and population.
+
+#Try to modify the value of 'Kyiv' to 'Kiev' in the population list.
+
+#Steps:
+
+#find the index of the tuple containing the data for the city 'Kyiv'
+#and assign to the kiev_id variable
+
+#transform this tuple into a list and modify the value to 'Kiev'
+
+#convert the list back to tuple and replace it in
+#the population list using kiev_id
+
+#In response, print the population list to the console as
+#shown below (use for loop for this).
 
 
+for c in population:
+    if c[0] == 'Kyiv':
+        kiev_id = c
+
+kiev_id = list(kiev_id)
+kiev_id[0] = 'Kiev'
+kiev_id = tuple(kiev_id)
+
+
+for i in range(len(population)):
+    if population[i][0] == 'Kyiv':
+        population[i] = kiev_id
+
+
+for c in population:
+    print(c)
+
+#Solução do exercicio
+kiev_id = [idx for idx, row in enumerate(population) if row[0] == 'Kyiv'][0]
+kiev_list = list(population[kiev_id])
+kiev_list[0] = 'Kiev'
+population[kiev_id] = tuple(kiev_list)
+ 
+for row in population:
+    print(row)
+
+
+
+
+#Exercise 22
+#The following text is given:
+
+raw_text = """Python is a programming language that lets you work more quickly 
+and integrate your systems more effectively. You can learn to use Python and 
+see almost immediate gains in productivity and lower maintenance costs. The 
+mission of the Python Software Foundation is to promote, protect, and advance 
+the Python programming language, and to support and facilitate the growth of 
+a diverse and international community of Python programmers."""
+
+
+#Using the appropriate method, split the text with space character
+#into tokens (words) and assign to the tokens variable. In response,
+#print tokens variable to the console.
+
+#Note that some tokens (words) also contain punctuation marks such
+#as dots and commas. We will deal with this in the next exercise.
+
+print(raw_text.split())
+
+
+#Exercise 23
+#The following tokens list is given:
+
+raw_text = """Python is a programming language that lets you work more quickly 
+and integrate your systems more effectively. You can learn to use Python and 
+see almost immediate gains in productivity and lower maintenance costs. The 
+mission of the Python Software Foundation is to promote, protect, and advance 
+the Python programming language, and to support and facilitate the growth of 
+a diverse and international community of Python programmers."""
+
+tokens = raw_text.split()
+
+#Note that some tokens (words) also contain punctuation
+#marks such as dots and commas.
+
+#Using a list comprehension remove all the punctuation
+#marks from the tokens list.
+
+#In response, print tokens list to the console.
+
+print([token.replace(',','').replace('.','') for token in tokens])
 
 
 
